@@ -1,0 +1,50 @@
+label {
+  color: blue
+}
+
+button {
+  background-color: transparent;
+}
+
+input[type=date] {
+  color: gray;
+}
+
+.todos {
+  color: gray;
+  font-size: 0.85rem;
+}
+
+.todos button {
+  color: gray;
+}
+
+.todos button:hover {
+  color: black;
+}
+
+.task-item {
+  color: black;
+  font-size: 1rem;
+}
+
+.dateDue {
+  color: black;
+}
+
+.outline {
+  padding: 0.25rem;
+  border: 2px gray solid;
+}
+
+.update-todo {
+  background-color: yellow;
+}
+
+.due-soon {
+  border: 0.20rem solid yellow;
+}
+
+.past-due {
+  border: 0.20rem solid red;
+}

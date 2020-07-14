@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Todo-App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Todos</h1>
+  <h3 id="points" title="Points earned for each task completed.">Points: <span>0</span></h3>
+
+    <form id="add-todo-form" class="outline">
+      <input id="add-todo" type="text" name="newTodo" value="" placeholder="Input New Todo"> Date Due:<input type="date" name="todoDateDue" value=""/>        <input type="submit" id="submit-button" value="Add Todo" > <span id="recordText"></span><span id="recordNumber"></span> <br />
+      <input type="radio" id="personal" name="todoTypeInput" value="personal" checked><label for="personal">Personal</label>
+      <input type="radio" id="work" name="todoTypeInput" value="work"><label for="work">Work</label>
+
+    </form>
+
+  <div id="remaining"></div>
+  <p>
+      <input id="search-text" type="text" name="" value="" placeholder="Filter Todos">
+  </p>
+  <div>
+    <input type="radio" id="allTab" name="todoType" value="all" checked><label for="allTab">All</label>
+    <input type="radio" id="personalTab" name="todoType" value="personal"><label for="personalTab">Personal</label>
+    <input type="radio" id="workTab" name="todoType" value="work"><label for="workTab">Work</label>
+    </div>
+  <div class="todos">
+  </div>
+
+  <script type="text/javascript" src="app.js">
+
+  </script>
+</body>
+
+</html>
