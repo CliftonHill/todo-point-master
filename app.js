@@ -25,7 +25,7 @@ FUTURE:
 -setup a personal login
 -use bootstrap to modernize appearance
 -Reset radio filter to All ***this was temp fix for a bug, later I want to make it so the current tab remains when inputting something new and updates for that tab as applicable, so you can work within Personal or Work tabs without having to switch back and forth.
--sort drop down next to filter input to sort by: date created (default) - oldest at top, newest at bottom, due soon (yellow items, w/ red at bottom, then rest), overdue (red items), other? Maybe also a sort for colored items?
+-sort drop down (option tags enclosed by select tag), next to filter input to sort by: date created (default) - oldest at top, newest at bottom, due soon (yellow items, w/ red at bottom, then rest), overdue (red items), other? Maybe also a sort for colored items?
 
 LEFT OFF ON:
 then need to work on connecting mongo db, enable express, mongoose
