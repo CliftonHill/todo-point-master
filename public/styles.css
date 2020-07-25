@@ -12,6 +12,14 @@ input[type=date] {
 
 .todos {
   color: gray;
+}
+
+.spacer {
+  display: inline-block;
+  width: 2rem;
+  text-align: center;
+}
+.small-text {
   font-size: 0.85rem;
 }
 
@@ -26,10 +34,37 @@ input[type=date] {
 .task-item {
   color: black;
   font-size: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 0.1rem;
+}
+
+.user {
+  color: gray;
+  text-align: center;
+  margin: 1rem 0 0.5rem 0;
+}
+
+#add-todo {
+  width: 50%;
+}
+
+#points {
+  color: blue;
+  display: inline-block;
+  border-bottom: 2px solid blue;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .dateDue {
-  color: black;
+  /* identifier */
+}
+
+.hide {
+  display: none;
+}
+
+.finish-button{
+  display: inline;
 }
 
 .outline {

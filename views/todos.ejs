@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Todo-App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Todo Point Master</h1>
+  <h2 class="user">[<%=userName%> Todos]</h2>
+  <h3 id="points" title="Points earned for each task completed.">Points: <%=points%></h3>
+
+    <form id="add-todo-form" class="outline" action="/addTodo" method="POST">
+      <input id="add-todo" type="text" minlength="3" name="newTodo" value="" placeholder="Input New Todo"> Date Due:<input type="date" name="todoDateDue" value=""/>        <input type="submit" id="submit-button" value="Add Todo" > <input type="text" name="taskId" value="" class="hide"> <br />
+      <input type="radio" id="personal" name="todoTypeInput" value="personal" <%=inputP%>><label for="personal">Personal</label>
+      <input type="radio" id="work" name="todoTypeInput" value="work" <%=inputW%>><label for="work">Work</label> <span class="spacer"> | </span> <label>Difficulty: <select class="difficulty" name="difficulty">
+        <option value="1" selected>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select></label>
+
+    </form>
+
+  <div id="remaining"></div>
+  <p>
+      <input id="search-text" type="text" name="" value="" placeholder="Filter Todos">
+  </p>
+  <div>
+    <input type="radio" id="allTab" name="todoType" value="all" checked><label for="allTab">All</label>
+    <input type="radio" id="personalTab" name="todoType" value="personal"><label for="personalTab">Personal</label>
+    <input type="radio" id="workTab" name="todoType" value="work"><label for="workTab">Work</label>
+    </div>
+  <div class="todos small-text">
+    <% todos.forEach(function(todo){%>
+   <div class="task<%=todo._id%>">
+  <p class="task-item"><span class="difficulty"><%=todo.difficulty%></span><span class="difficultyNum hide"><%=todo.difficulty%></span><span><%=todo.text%></span></p>
+  | Added: <span class="dateMade"><%=todo.dateMadeClientView%></span> <span class="hide dateMade"><%=todo.dateMade%></span> | <%= todo.dateDue === "Invalid Date" || todo.dateDue === "" ? "": "Due Date: " + todo.dateDueClientView %><span class="hide dateDue"><%=todo.dateDue%></span><span class="hide"><%=todo.todoType%></span> <button name="task<%=todo._id%>">edit</button>
+
+  <form class="finish-button" action="/finishTodo" method="POST">
+    <input type="text" class="hide" name="taskId" value="<%=todo._id%>" />  <input type="submit" value="Finished"/>
+    </form>
+
+   </div>
+      <%});%>
+  </div>
+
+  <script type="text/javascript" src="app.js">
+
+  </script>
+</body>
+
+</html>
