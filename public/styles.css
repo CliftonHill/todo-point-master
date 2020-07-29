@@ -1,17 +1,92 @@
+body {
+  font-size: 0.9rem;
+}
+
+main, header {
+  margin: 0 auto;
+  min-width: 30rem;
+  width: 60%;
+  max-width: 60rem;
+}
+
+h1 {
+  color: #93f425;
+  font-family: 'Joti One', cursive;
+  background-color: #b6c8c8;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border-radius: 2rem;
+  margin-top: 0.25rem;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-top: 0.25rem;
+}
+
+a {
+  color: #6cc20a;
+}
+
+.card-header h4 {
+  display: inline-block;
+}
+
+.headline {
+  color: #ff4d4d;
+  text-align: center;
+  margin: 1rem 0 0.5rem 0;
+}
+
+input[type=date], .user, .todos, .form-control::placeholder {
+  color: gray;
+}
+
+#user-id {
+  color: #6cc20a;
+  position: absolute;
+  right: 1rem;
+  top: 0.25rem;
+}
+
+#log-in-form div label, #register-form div label {
+  width: 100%;
+  margin: 0rem auto;
+}
+
+p {
+  margin-bottom: 0.2rem;
+}
+
+div {
+  margin-bottom: 0.1rem;
+}
+
 label {
-  color: blue
+    margin: 0.2rem 0 0.2rem 0;
+    color: #6cc20a;
 }
 
-button {
-  background-color: transparent;
+.btn-sm {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.25rem;
+}
+#submit-button {
+  font-size: 0.9rem;
+  padding: 0.2rem 0.3rem;
 }
 
-input[type=date] {
-  color: gray;
+footer {
+  background-color: #d3dede;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
-.todos {
-  color: gray;
+.login-problem, .registration-problem {
+  color: #ff4d4d;
 }
 
 .spacer {
@@ -24,7 +99,7 @@ input[type=date] {
 }
 
 .todos button {
-  color: gray;
+  color: #606060;
 }
 
 .todos button:hover {
@@ -38,10 +113,11 @@ input[type=date] {
   margin-bottom: 0.1rem;
 }
 
-.user {
-  color: gray;
-  text-align: center;
-  margin: 1rem 0 0.5rem 0;
+.card {
+  min-width: 25rem;
+  width: 50%;
+  max-width: 30rem;
+  margin: 0.5rem auto;
 }
 
 #add-todo {
@@ -49,10 +125,11 @@ input[type=date] {
 }
 
 #points {
-  color: blue;
+  color: #6cc20a;
   display: inline-block;
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid #6cc20a;
   margin: 0.5rem 0 0.5rem 0;
+  font-size: 1.2rem;
 }
 
 .dateDue {
@@ -72,14 +149,10 @@ input[type=date] {
   border: 2px gray solid;
 }
 
-.update-todo {
-  background-color: yellow;
-}
-
-.due-soon {
-  border: 0.20rem solid yellow;
+.update-todo, .due-soon {
+  background-color: #ff6;
 }
 
 .past-due {
-  border: 0.20rem solid red;
+  background-color: #ff8080;
 }

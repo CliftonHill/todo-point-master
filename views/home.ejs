@@ -1,0 +1,72 @@
+<%- include("partials/header"); -%>
+<header>
+<h1>Todo Point Master <i class="fas fa-gamepad"></i></h1>
+
+<h2 class="headline">Make Getting Things Done FUN!</h2>
+  </header>
+
+<main>
+  <div>
+    <br />
+   Area to talk about how awesome this app is...<br /><br /><br />
+
+
+    </div>
+
+  <div class="card" id="log-in-form">
+    <div class="card-header">
+      <h4>Log-In</h4> / <a href="#" id="register-button">Register</a>
+    </div>
+    <div class="card-body">
+      <form action="/login" method="POST">
+        <div class="form-group">
+          <p class="login-problem">
+            <%=loginProblem%>
+            </p>
+            <label>Email: <input type="email" class="form-control" name="email" placeholder="you@email.com" required/></label>
+          </div>
+
+        <div class="form-group">
+                <label>Password: <input type="password" class="form-control" name="password" minlength="8" required/></label>
+          </div>
+          <button type="submit" class="btn btn-primary" name="button">Submit</button>
+
+        </form>
+
+      </div>
+
+  </div>
+
+  <div class="card hide" id="register-form" >
+    <div class="card-header">
+      <h4>Register</h4> / <a href="#" id="log-in-button">Log-In</a>
+    </div>
+    <div class="card-body">
+      <form action="/register" method="POST">
+        <div class="form-group">
+          <p class="registration-problem">
+            <%=regProblem%>
+            </p>
+            <label>Name: <input type="text" class="form-control" name="name" placeholder="&quot;Elon&quot; (or) &quot;Elon Musk&quot;" required/></label>
+        </div>
+        <div class="form-group">
+            <label>Email: <input type="email" class="form-control" name="email" placeholder="you@email.com" required/></label>
+          </div>
+
+        <div class="form-group">
+                <label>Password: <input type="password" class="form-control" name="password" minlength="8" required/></label>
+          </div>
+          <button type="submit" class="btn btn-primary" name="button">Submit</button>
+
+        </form>
+
+      </div>
+
+  </div>
+
+</main>
+
+
+
+
+<%- include("partials/footer"); -%>
