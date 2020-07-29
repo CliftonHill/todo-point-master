@@ -18,6 +18,8 @@ PROGRAMMER NOTES:
 -some dynamic searches for correct childNode set up to avoid program breaking if order of Nodes or length changes
 
 TIMELINE:
+-7/29/20 - mobile ready
+-7/28/20 - login/registration working, password encryption, bootstrap enabled, CSS cleaning in progress
 -7/25/20 - rewrite for full stack w/ express, mongoDB connection, full function restored
 -7/15/20 - client side program functional - stored in git version control
 -Started?
@@ -150,7 +152,7 @@ app.get("/", function(req, res){
 app.post("/login", function(req, res) {
   let data = req.body;
   let loginErrorMsg = "Username and/or password are incorrect. Try again.";
-  User.find({email: data.email}, function(err, docs){ // username is in database
+  User.find({email: data.email}, function(err, docs){ // verifies username is in database
     if (!err && docs.length === 1){
       userID = data.email;
       userName = docs[0].name;
@@ -193,9 +195,6 @@ app.post("/register", function(req, res) {
       });
     }
   });
-
-
-
 });
 
 app.post("/todos/addTodo", function(req, res){ //this works to add to DB

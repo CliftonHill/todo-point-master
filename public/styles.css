@@ -1,5 +1,12 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
-  font-size: 0.9rem;
+    font-size: 0.9rem;
+    margin: 0 0 3rem;
+    padding-bottom: 1rem;
 }
 
 main, header {
@@ -14,9 +21,10 @@ h1 {
   font-family: 'Joti One', cursive;
   background-color: #b6c8c8;
   padding: 0.5rem 1rem;
+  margin-top: 0.25rem;
   display: inline-block;
   border-radius: 2rem;
-  margin-top: 0.25rem;
+
 }
 
 h2 {
@@ -27,6 +35,12 @@ h2 {
 
 a {
   color: #6cc20a;
+}
+
+input {
+  border: 0.05rem solid gray;
+  border-radius: 0.15rem;
+
 }
 
 .card-header h4 {
@@ -55,12 +69,8 @@ input[type=date], .user, .todos, .form-control::placeholder {
   margin: 0rem auto;
 }
 
-p {
-  margin-bottom: 0.2rem;
-}
-
-div {
-  margin-bottom: 0.1rem;
+p, div, .task-item {
+  margin-bottom: 0.15rem;
 }
 
 label {
@@ -73,7 +83,6 @@ label {
   padding: 0.1rem 0.25rem;
 }
 #submit-button {
-  font-size: 0.9rem;
   padding: 0.2rem 0.3rem;
 }
 
@@ -83,6 +92,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 3rem;
 }
 
 .login-problem, .registration-problem {
@@ -94,23 +104,18 @@ footer {
   width: 2rem;
   text-align: center;
 }
-.small-text {
+.small-text, #submit-button {
   font-size: 0.85rem;
 }
 
-.todos button {
-  color: #606060;
-}
-
-.todos button:hover {
-  color: black;
+.todos button, .btn-outline-secondary {
+  color: gray;
 }
 
 .task-item {
   color: black;
   font-size: 1rem;
   padding-bottom: 0;
-  margin-bottom: 0.1rem;
 }
 
 .card {
@@ -120,14 +125,10 @@ footer {
   margin: 0.5rem auto;
 }
 
-#add-todo {
-  width: 50%;
-}
-
 #points {
   color: #6cc20a;
   display: inline-block;
-  border-bottom: 2px solid #6cc20a;
+  border-bottom: 0.15rem solid #6cc20a;
   margin: 0.5rem 0 0.5rem 0;
   font-size: 1.2rem;
 }
@@ -146,7 +147,7 @@ footer {
 
 .outline {
   padding: 0.25rem;
-  border: 2px gray solid;
+  border: 0.15rem gray solid;
 }
 
 .update-todo, .due-soon {
@@ -155,4 +156,56 @@ footer {
 
 .past-due {
   background-color: #ff8080;
+}
+
+/* ***RESIZING*** */
+/* FOR TABLET */
+@media screen and (max-width: 1024px) {
+  main, header {
+    min-width: 30rem;
+    width: 90%;
+  }
+
+  .btn-sm, #submit-button, .task-item {
+    font-size: .9rem;
+  }
+
+  p {
+    padding-bottom: 0.1rem;
+    margin-bottom: 0.1rem;
+  }
+
+  #add-todo {
+    min-width: 20rem;
+  }
+
+  label {
+    font-size: 1.1rem;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  main, header {
+    min-width: 20rem;
+    width: 95%;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    min-width: 40%;
+    max-width: 70%;
+    position: relative;
+    left: -5px;
+  }
+
+  #add-todo {
+    width: 95%;
+  }
+
+  #submit-button {
+    margin-top: 0.15rem;
+  }
+
 }

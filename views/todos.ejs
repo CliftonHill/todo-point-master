@@ -31,7 +31,7 @@
    <% todos.forEach(function(todo){%>
   <div class="task<%=todo._id%>">
  <p class="task-item"><span class="difficulty"><%=todo.difficulty%></span><span class="difficultyNum hide"><%=todo.difficulty%></span><span><%=todo.text%></span></p>
- | Added: <span class="dateMade"><%=todo.dateMadeClientView%></span> <span class="hide dateMade"><%=todo.dateMade%></span> | <%= todo.dateDue === "Invalid Date" || todo.dateDue === "" ? "": "Due Date: " + todo.dateDueClientView %><span class="hide dateDue"><%=todo.dateDue%></span><span class="hide"><%=todo.todoType%></span> <button name="task<%=todo._id%>" class="btn btn-outline-secondary btn-sm">edit</button>
+ | Added: <span class="dateMade"><%=todo.dateMadeClientView%></span> <span class="hide dateMade"><%=todo.dateMade%></span> | <%= todo.dateDue === "Invalid Date" || todo.dateDue === "" ? "": "Due: " + todo.dateDueClientView %><span class="hide dateDue"><%=todo.dateDue%></span><span class="hide"><%=todo.todoType%></span> <button name="task<%=todo._id%>" class="btn btn-outline-secondary btn-sm">edit</button>
 
  <form class="finish-button" action="/todos/finishTodo" method="POST">
    <input type="text" class="hide" name="taskId" value="<%=todo._id%>" />  <input type="submit" class="btn btn-outline-secondary btn-sm" value="Finished"/>
