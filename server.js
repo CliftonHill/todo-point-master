@@ -12,13 +12,14 @@ FEATURES:
 -bootstrap connection for modern appearance
 -login/registration screen
 -passwords include hashing/salting with bcrypt
+-mobile friendly
 
 PROGRAMMER NOTES:
 -sort/filter is done entirely client side to avoid an unneeded DB access.
 -some dynamic searches for correct childNode set up to avoid program breaking if order of Nodes or length changes
 
 TIMELINE:
--7/29/20 - mobile ready
+-7/29/20 - mobile ready, css cleaned up
 -7/28/20 - login/registration working, password encryption, bootstrap enabled, CSS cleaning in progress
 -7/25/20 - rewrite for full stack w/ express, mongoDB connection, full function restored
 -7/15/20 - client side program functional - stored in git version control
@@ -37,7 +38,6 @@ LEFT OFF ON:
 FUTURE:
 *needed*
 -upload to Heroku
--make mobile friendly
 
 *other*
 -add stylesheet classes to use for emphasis and color changes to greater differentiate tasks - make a pastel choice of colors so that text is still visible
@@ -50,12 +50,11 @@ FUTURE:
 -sort drop down (option tags enclosed by select tag), next to filter input to sort by: date created (default) - oldest at top, newest at bottom, due soon (yellow items, w/ red at bottom, then rest), overdue (red items), other? Maybe also a sort for colored items?
 *can i also include routing, so that I can have the url something like clifton.todos.com?
 -finish setting up dynamically searched childNodes to avoid program break; some already complete
--clean up code/css
 -integrate with passport or something else to allow cookies/sessions and authentication
 
 */
 // *************************************************
-
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -69,7 +68,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 // MONGOOSE
-mongoose.connect("mongodb://localhost:27017/todo-point-masterDB", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.PASSWORD}@cluster0-zc6ej.mongodb.net/todo-point-master?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 let db = mongoose.connection;
 //***need to add in initial and ongoing connection error checks?
@@ -244,6 +243,6 @@ app.post("/todos/finishTodo", function(req, res){
   });
 });
 
-app.listen(3000, function(){
-  console.log("Server started on port 3000");
+app.listen(3000 || process.env.PORT, function(){
+  console.log("Server started");
 })

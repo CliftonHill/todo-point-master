@@ -200,6 +200,11 @@ footer {
     left: -5px;
   }
 
+  .card {
+    min-width: 18rem;
+    width: 90%;
+  }
+
   #add-todo {
     width: 95%;
   }
