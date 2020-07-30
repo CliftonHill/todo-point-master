@@ -33,7 +33,6 @@ BUGS FIXED:
 -replaced *editing* button value back to "edit" if another edit button is clicked instead
 
 LEFT OFF ON:
-**user login,
 
 FUTURE:
 *needed*
