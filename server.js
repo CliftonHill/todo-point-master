@@ -119,22 +119,23 @@ app.get("/todos", function(req, res){
     todos.forEach(function(todo){
       points+= todo.difficulty || 1; // or 1 is for all of the tasks that weren't given a point difficulty value
     });
-  });
+    
+    let personalSelection = "",
+        workSelection = "";
+    if (inputSelection === "personal"){
+      personalSelection = "checked";
+    } else {
+      workSelection = "checked";
+    }
 
-  let personalSelection = "",
-      workSelection = "";
-  if (inputSelection === "personal"){
-    personalSelection = "checked";
-  } else {
-    workSelection = "checked";
-  }
+    Todo.find({userID: userID, completed: false}, function(err, foundTodos){
+      if (err) return err;
 
-  Todo.find({userID: userID, completed: false}, function(err, foundTodos){
-    if (err) return err;
-
-    res.render("todos", {
-      todos: foundTodos, points: points, inputP: personalSelection, inputW: workSelection, userName: userName, userID: userID
+      res.render("todos", {
+        todos: foundTodos, points: points, inputP: personalSelection, inputW: workSelection, userName: userName, userID: userID
+      });
     });
+
   });
 });
 
