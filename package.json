@@ -16,6 +16,9 @@
     "url": "https://github.com/CliftonHill/todo-point-master/issues"
   },
   "homepage": "https://github.com/CliftonHill/todo-point-master#readme",
+  "engines": {
+    "node": "13.14.0"
+  },
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
