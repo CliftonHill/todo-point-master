@@ -19,6 +19,7 @@ PROGRAMMER NOTES:
 -some dynamic searches for correct childNode set up to avoid program breaking if order of Nodes or length changes
 
 TIMELINE:
+-7/30/20 - deploying to heroku
 -7/29/20 - mobile ready, css cleaned up
 -7/28/20 - login/registration working, password encryption, bootstrap enabled, CSS cleaning in progress
 -7/25/20 - rewrite for full stack w/ express, mongoDB connection, full function restored
@@ -31,6 +32,7 @@ BUGS FIXED:
 -adjusted stored date values so that due date highlights are more accurate
 -difficulty level not filling in edit field from task because other errors were stopping code execution, once I fixed those (wrong childNodes selections) it worked just fine
 -replaced *editing* button value back to "edit" if another edit button is clicked instead
+-points not registering on heroku. Appear to be due to Model.find and then forEach method not completing before page was rendered. Placed rest of code below foreach, but within Model.find method to make sure that additional code was not executed until after points were tallied.
 
 LEFT OFF ON:
 
@@ -119,7 +121,7 @@ app.get("/todos", function(req, res){
     todos.forEach(function(todo){
       points+= todo.difficulty || 1; // or 1 is for all of the tasks that weren't given a point difficulty value
     });
-    
+
     let personalSelection = "",
         workSelection = "";
     if (inputSelection === "personal"){

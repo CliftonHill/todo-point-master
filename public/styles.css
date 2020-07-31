@@ -17,9 +17,9 @@ main, header {
 }
 
 h1 {
-  color: #93f425;
+  color: #b6ff97;
   font-family: 'Joti One', cursive;
-  background-color: #b6c8c8;
+  background-color: #8ba7a7;
   padding: 0.5rem 1rem;
   margin-top: 0.25rem;
   display: inline-block;
@@ -48,7 +48,7 @@ input {
 }
 
 .headline {
-  color: #ff4d4d;
+  color: #ff8080;
   text-align: center;
   margin: 1rem 0 0.5rem 0;
 }
