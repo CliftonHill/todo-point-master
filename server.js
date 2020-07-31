@@ -242,6 +242,12 @@ app.post("/todos/finishTodo", function(req, res){
   });
 });
 
-app.listen(3000 || process.env.PORT, function(){
+let port = process.env.PORT; //heroku local uses port 5000
+if (port == null || port == "") {
+  console.log("working locally");
+  port = 3000;
+}
+
+app.listen(port, function(){
   console.log("Server started");
 })
