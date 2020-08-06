@@ -47,6 +47,29 @@ input {
   display: inline-block;
 }
 
+.marketing-cards {
+  margin: 1.5rem auto 0.5rem;
+  max-width: 10rem;
+  min-height: 15rem;
+}
+
+.marketing-card-header {
+  color: #8ba7a7;
+  background-color: white;
+  text-align: center;
+  font-family: 'Joti One', cursive;
+}
+
+.marketing-card-title {
+  font-size: 1.6rem;
+  }
+
+.marketing-card-body {
+  background-color: #8ba7a7;
+  font-size: 1.2rem;
+  color: white;
+}
+
 .headline {
   color: #ff8080;
   text-align: center;
@@ -67,6 +90,13 @@ input[type=date], .user, .todos, .form-control::placeholder {
 #log-in-form div label, #register-form div label {
   width: 100%;
   margin: 0rem auto;
+}
+
+#log-in-form, #register-form {
+  min-width: 25rem;
+  width: 50%;
+  max-width: 30rem;
+  margin: 2rem auto;
 }
 
 p, div, .task-item {
@@ -118,11 +148,9 @@ footer {
   padding-bottom: 0;
 }
 
-.card {
-  min-width: 25rem;
-  width: 50%;
-  max-width: 30rem;
-  margin: 0.5rem auto;
+.sample {
+  color: gray;
+  font-size: 90%;
 }
 
 #points {
@@ -170,6 +198,10 @@ footer {
     font-size: .9rem;
   }
 
+  .marketing-cards {
+    min-height: 11rem;
+  }
+
   p {
     padding-bottom: 0.1rem;
     margin-bottom: 0.1rem;
@@ -200,7 +232,12 @@ footer {
     left: -5px;
   }
 
-  .card {
+  .marketing-cards {
+    min-height: 9rem;
+  }
+
+  #log-in-form, #register-form {
+    margin-top: 3rem;
     min-width: 18rem;
     width: 90%;
   }

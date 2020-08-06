@@ -19,6 +19,7 @@ PROGRAMMER NOTES:
 -some dynamic searches for correct childNode set up to avoid program breaking if order of Nodes or length changes
 
 TIMELINE:
+-8/6/20 - added sample login credentials, added marketing Bootstrap cards w/ custom css
 -7/30/20 - deploying to heroku
 -7/29/20 - mobile ready, css cleaned up
 -7/28/20 - login/registration working, password encryption, bootstrap enabled, CSS cleaning in progress
